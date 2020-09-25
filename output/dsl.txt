@@ -1,0 +1,18 @@
+builder.append("{");
+builder.append("	\"query\": {");
+builder.append("		\"bool\": {");
+builder.append("			\"must\": [{");
+builder.append("				\"query_string\": {");
+builder.append("					\"default_field\": \"_all\",");
+builder.append("					\"query\": \"calloff_version:F13120200424093725952\"");
+builder.append("				}");
+builder.append("			}],");
+builder.append("			\"must_not\": [],");
+builder.append("			\"should\": []");
+builder.append("		}");
+builder.append("	},");
+builder.append("	\"from\": 0,");
+builder.append("	\"size\": 50,");
+builder.append("	\"sort\": [],");
+builder.append("	\"aggs\": {}");
+builder.append("}");

@@ -1,0 +1,18 @@
+{
+	"query": {
+		"bool": {
+			"must": [{
+				"query_string": {
+					"default_field": "_all",
+					"query": "calloff_version:F13120200424093725952"
+				}
+			}],
+			"must_not": [],
+			"should": []
+		}
+	},
+	"from": 0,
+	"size": 50,
+	"sort": [],
+	"aggs": {}
+}
