@@ -1,26 +1,18 @@
 package com.superzyen.dsltool.offline;
 
+import com.superzyen.common.InOutFile;
+
 import java.io.*;
 
 public class GenDslTool {
-    private final String FILE_PATH = "./input";
-    private final String FILE_NAME = "dsl.txt";
-    private final String OUTPUT_PATH = "./output";
 
     public void gen() throws IOException {
         BufferedReader bufferedReader = null;
         BufferedWriter bufferedWriter = null;
         try {
-            File floder = new File(FILE_PATH);
-            File outFolder = new File(OUTPUT_PATH);
-            if (!floder.exists() || floder == null) {
-                floder.mkdir();
-            }
-            if (!outFolder.exists() || outFolder == null) {
-                outFolder.mkdir();
-            }
-            File dslFile = new File(FILE_PATH + File.separator + FILE_NAME);
-            File convertFile = new File(OUTPUT_PATH + File.separator + FILE_NAME);
+
+            File dslFile = InOutFile.getInputFile();
+            File convertFile = InOutFile.getOutputFile();
             bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(dslFile)));
             bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(convertFile)));
             String dsl = null;
